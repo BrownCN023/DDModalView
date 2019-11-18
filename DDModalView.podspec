@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
 s.name         = "DDModalView"
-s.version      = "0.0.7"
+s.version      = "0.0.8"
 s.summary      = "弹出框alert、action及自定义。"
 s.homepage     = "https://github.com/BrownCN023/DDModalView"
 s.license      = { :type => "MIT", :file => "LICENSE" }
