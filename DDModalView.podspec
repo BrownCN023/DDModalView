@@ -16,8 +16,7 @@ s.license      = { :type => "MIT", :file => "LICENSE" }
 s.author       = { "liyebiao1990" => "347991555@qq.com" }
 s.platform     = :ios, "8.0"
 s.source       = { :git => "https://github.com/BrownCN023/DDModalView.git", :tag => s.version }
-s.source_files = "DDModalView/**/*.{h,m}"
-# s.resource     = "DDModalView/Resources/DDModalView.bundle"
+s.source_files = "DDModalView/*.{h,m}"
 s.requires_arc = true
 s.frameworks = "Foundation"
 
