@@ -20,6 +20,7 @@
 
 - (void)dealloc{
     NSLog(@"--- dealloc %@ ---",self.class);
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (id)initWithFrame:(CGRect)frame{
@@ -36,9 +37,7 @@
     [self addSubview:self.modalView];
 }
 - (void)_setupLayout{
-    [self.modalView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.right.bottom.mas_equalTo(0);
-    }];
+    self.modalView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 }
 
 #pragma mark - Public Method
@@ -68,7 +67,7 @@
     
 }
 - (CGFloat)modalColorAlpha{
-    return 0.3;
+    return 0.4;
 }
 - (CGFloat)showAnimatedDuration{
     return 0.45;
