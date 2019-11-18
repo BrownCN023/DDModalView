@@ -33,6 +33,9 @@ NS_ASSUME_NONNULL_BEGIN
 #define DDModal_IPHONE_X_TYPE (DDModal_IPHONE_5_8 || DDModal_IPHONE_6_1 || DDModal_IPHONE_6_5)
 #define DDModal_SAFE_BOTTOM_HEIGHT (DDModal_IPHONE_X_TYPE ? 34.0f : 0.0f)
 
+
+typedef void (^DDModalCompletion)(void);
+
 @interface DDModalView : UIView
 
 @property (nonatomic,strong,readonly) UIView * modalView;
@@ -52,11 +55,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)subviewShowAnimation;
 - (void)subviewHideAnimation;
 
-- (void)show:(void (^)(void))completion;
-- (void)dismiss:(void (^)(void))completion;
+- (void)show:(DDModalCompletion _Nullable)completion;
+- (void)dismiss:(DDModalCompletion _Nullable)completion;
 
-- (void)viewShowAnimation:(void (^)(void))completion;
-- (void)viewHideAnimation:(void (^)(void))completion;
+- (void)viewShowAnimation:(DDModalCompletion _Nullable)completion;
+- (void)viewHideAnimation:(DDModalCompletion _Nullable)completion;
 
 - (void)tapModalView:(UITapGestureRecognizer *)tapGes;
 

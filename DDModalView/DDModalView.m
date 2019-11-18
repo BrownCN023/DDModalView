@@ -89,12 +89,12 @@
 }
 
 #pragma mark - Public
-- (void)show:(void (^)(void))completion{
+- (void)show:(DDModalCompletion)completion{
     dispatch_async(dispatch_get_main_queue(), ^{
         [self viewShowAnimation:completion];
     });
 }
-- (void)dismiss:(void (^)(void))completion{
+- (void)dismiss:(DDModalCompletion)completion{
     dispatch_async(dispatch_get_main_queue(), ^{
         [self viewHideAnimation:^{
             [self removeFromSuperview];
@@ -102,7 +102,7 @@
     });
 }
 
-- (void)viewShowAnimation:(void (^)(void))completion{
+- (void)viewShowAnimation:(DDModalCompletion)completion{
     [UIView animateWithDuration:[self showAnimatedDuration] delay:0 usingSpringWithDamping:self.springDamping initialSpringVelocity:self.springVelocity options:UIViewAnimationOptionCurveEaseOut animations:^{
         self.modalView.alpha = 1;
         [self subviewShowAnimation];
@@ -114,7 +114,7 @@
     }];
 }
 
-- (void)viewHideAnimation:(void (^)(void))completion{
+- (void)viewHideAnimation:(DDModalCompletion)completion{
     [UIView animateWithDuration:[self showAnimatedDuration] delay:0 usingSpringWithDamping:self.springDamping initialSpringVelocity:self.springVelocity options:UIViewAnimationOptionCurveEaseIn animations:^{
         self.modalView.alpha = 0;
         [self subviewHideAnimation];

@@ -321,9 +321,7 @@
     if(self.onItemBlock){
         self.onItemBlock(indexPath.row);
     }
-    [self dismiss:^{
-        
-    }];
+    [self dismiss:nil];
 }
 
 #pragma mark - Getter

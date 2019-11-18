@@ -329,9 +329,7 @@
     if(self.onCancelBlock){
         self.onCancelBlock();
     }
-    [self dismiss:^{
-
-    }];
+    [self dismiss:nil];
 }
 
 - (void)clickOkButton:(UIButton *)sender{
@@ -342,9 +340,7 @@
     if(self.onItemBlock){
         self.onItemBlock(itemIndex);
     }
-    [self dismiss:^{
-
-    }];
+    [self dismiss:nil];
 }
 
 #pragma mark - UITableViewDelegate/UITableViewDataSource
