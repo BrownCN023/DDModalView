@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
 s.name         = "DDModalView"
-s.version      = "0.0.4"
+s.version      = "0.0.5"
 s.summary      = "弹出框alert、action及自定义。"
 s.homepage     = "https://github.com/BrownCN023/DDModalView"
 s.license      = { :type => "MIT", :file => "LICENSE" }
@@ -18,7 +18,7 @@ s.platform     = :ios, "9.0"
 s.source       = { :git => "https://github.com/BrownCN023/DDModalView.git", :tag => s.version }
 s.source_files = "DDModalView/*.{h,m}"
 s.requires_arc = true
-s.frameworks = "Foundation"
+s.frameworks = "UIKit", "Foundation"
 
 s.dependency "Masonry", "~> 1.1.0"
 
