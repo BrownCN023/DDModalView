@@ -20,6 +20,14 @@ NS_ASSUME_NONNULL_BEGIN
                              otherItems:(NSArray<NSString *> *)otherItems
                             onItemBlock:(void (^)(NSInteger itemIndex))onItemBlock;
 
++ (DDSimpleActionView *)actionInView:(UIView *)view
+                               title:(NSString *)title
+                             message:(NSString *)message
+                              cancel:(NSString *)cancel
+                       onCancelBlock:(void (^)(void))onCancelBlock
+                          otherItems:(NSArray<NSString *> *)otherItems
+                         onItemBlock:(void (^)(NSInteger itemIndex))onItemBlock;
+
 @end
 
 NS_ASSUME_NONNULL_END

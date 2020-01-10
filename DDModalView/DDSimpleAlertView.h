@@ -12,6 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DDSimpleAlertView : DDModalAlertView
 
++ (DDSimpleAlertView *)alertInView:(UIView *)view
+                             title:(NSString *)title
+                           message:(NSString *)message
+                            cancel:(NSString *)cancel
+                     onCancelBlock:(void (^)(void))onCancelBlock
+                        otherItems:(NSArray<NSString *> *)otherItems
+                       onItemBlock:(void (^)(NSInteger itemIndex))onItemBlock;
+
 + (DDSimpleAlertView *)showAlertInView:(UIView *)view
                                  title:(NSString *)title
                                message:(NSString *)message
@@ -19,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
                          onCancelBlock:(void (^)(void))onCancelBlock
                             otherItems:(NSArray<NSString *> *)otherItems
                            onItemBlock:(void (^)(NSInteger itemIndex))onItemBlock;
+
+
 
 @end
 

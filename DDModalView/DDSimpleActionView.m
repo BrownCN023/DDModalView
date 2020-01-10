@@ -128,6 +128,18 @@
 @implementation DDSimpleActionView
 
 + (DDSimpleActionView *)showActionInView:(UIView *)view
+                                   title:(NSString *)title
+                                 message:(NSString *)message
+                                  cancel:(NSString *)cancel
+                           onCancelBlock:(void (^)(void))onCancelBlock
+                              otherItems:(NSArray<NSString *> *)otherItems
+                             onItemBlock:(void (^)(NSInteger itemIndex))onItemBlock{
+    DDSimpleActionView * actionView = [self actionInView:view title:title message:message cancel:cancel onCancelBlock:onCancelBlock otherItems:otherItems onItemBlock:onItemBlock];
+    [actionView show:nil];
+    return actionView;
+}
+
++ (DDSimpleActionView *)actionInView:(UIView *)view
                                   title:(NSString *)title
                                 message:(NSString *)message
                                  cancel:(NSString *)cancel

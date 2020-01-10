@@ -148,6 +148,18 @@
                          onCancelBlock:(void (^)(void))onCancelBlock
                             otherItems:(NSArray<NSString *> *)otherItems
                            onItemBlock:(void (^)(NSInteger itemIndex))onItemBlock{
+    DDSimpleAlertView * alertView = [self alertInView:view title:title message:message cancel:cancel onCancelBlock:onCancelBlock otherItems:otherItems onItemBlock:onItemBlock];
+    [alertView show:nil];
+    return alertView;
+}
+
++ (DDSimpleAlertView *)alertInView:(UIView *)view
+                             title:(NSString *)title
+                           message:(NSString *)message
+                            cancel:(NSString *)cancel
+                     onCancelBlock:(void (^)(void))onCancelBlock
+                        otherItems:(NSArray<NSString *> *)otherItems
+                       onItemBlock:(void (^)(NSInteger itemIndex))onItemBlock{
     
     DDSimpleAlertView * modalView = [[DDSimpleAlertView alloc] initWithFrame:view.bounds];
     [view addSubview:modalView];

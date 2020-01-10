@@ -132,7 +132,9 @@
                                message:(NSString *)message
                                  items:(NSArray<NSString *> *)items
                            onItemBlock:(void (^)(NSInteger itemIndex))onItemBlock{
-    return [self createFlatActionInView:view hasCorner:YES title:title message:message items:items onItemBlock:onItemBlock];
+    DDFlatActionView * actionView = [self createFlatActionInView:view hasCorner:YES title:title message:message items:items onItemBlock:onItemBlock];
+    [actionView show:nil];
+    return actionView;
 }
 
 + (DDFlatActionView *)showFlatActionInView:(UIView *)view
@@ -140,8 +142,29 @@
                                    message:(NSString *)message
                                      items:(NSArray<NSString *> *)items
                                onItemBlock:(void (^)(NSInteger itemIndex))onItemBlock{
+    DDFlatActionView * flatView = [self createFlatActionInView:view hasCorner:NO title:title message:message items:items onItemBlock:onItemBlock];
+    [flatView show:nil];
+    return flatView;
+}
+
++ (DDFlatActionView *)actionInView:(UIView *)view
+                             title:(NSString *)title
+                           message:(NSString *)message
+                             items:(NSArray<NSString *> *)items
+                       onItemBlock:(void (^)(NSInteger itemIndex))onItemBlock{
+    return [self createFlatActionInView:view hasCorner:YES title:title message:message items:items onItemBlock:onItemBlock];
+}
+
++ (DDFlatActionView *)flatActionInView:(UIView *)view
+                                 title:(NSString *)title
+                               message:(NSString *)message
+                                 items:(NSArray<NSString *> *)items
+                           onItemBlock:(void (^)(NSInteger itemIndex))onItemBlock{
     return [self createFlatActionInView:view hasCorner:NO title:title message:message items:items onItemBlock:onItemBlock];
 }
+
+
+
 
 + (DDFlatActionView *)createFlatActionInView:(UIView *)view
                                    hasCorner:(BOOL)hasCorner
