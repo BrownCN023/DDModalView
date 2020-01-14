@@ -67,7 +67,7 @@
     
 }
 - (CGFloat)modalColorAlpha{
-    return 0.4;
+    return 0.35;
 }
 - (CGFloat)showAnimatedDuration{
     return 0.45;
@@ -103,7 +103,12 @@
 }
 
 - (void)viewShowAnimation:(DDModalCompletion)completion{
-    [UIView animateWithDuration:[self showAnimatedDuration] delay:0 usingSpringWithDamping:self.springDamping initialSpringVelocity:self.springVelocity options:UIViewAnimationOptionCurveEaseOut animations:^{
+    [UIView animateWithDuration:[self showAnimatedDuration]
+                          delay:0
+         usingSpringWithDamping:self.springDamping
+          initialSpringVelocity:self.springVelocity
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
         self.modalView.alpha = 1;
         [self subviewShowAnimation];
         [self layoutIfNeeded];
@@ -115,7 +120,12 @@
 }
 
 - (void)viewHideAnimation:(DDModalCompletion)completion{
-    [UIView animateWithDuration:[self showAnimatedDuration] delay:0 usingSpringWithDamping:self.springDamping initialSpringVelocity:self.springVelocity options:UIViewAnimationOptionCurveEaseIn animations:^{
+    [UIView animateWithDuration:[self showAnimatedDuration]
+                          delay:0
+         usingSpringWithDamping:self.springDamping
+          initialSpringVelocity:self.springVelocity
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
         self.modalView.alpha = 0;
         [self subviewHideAnimation];
         [self layoutIfNeeded];

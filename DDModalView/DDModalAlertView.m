@@ -8,10 +8,39 @@
 
 #import "DDModalAlertView.h"
 
+@interface DDModalContentView()
+
+@property (nonatomic,strong) UIVisualEffectView * effectView;
+
+@end
+
+@implementation DDModalContentView
+
+
+
+- (instancetype)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
+    if (self) {
+        UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+        self.effectView = [[UIVisualEffectView alloc] initWithEffect:effect];
+        [self addSubview:self.effectView];
+        [self.effectView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.top.right.bottom.mas_equalTo(0);
+        }];
+    }
+    return self;
+}
+
+
+
+@end
+
+
+
 @interface DDModalAlertView ()
-@property (nonatomic,strong) UIView * topView;
-@property (nonatomic,strong) UIView * contentView;
-@property (nonatomic,strong) UIView * bottomView;
+@property (nonatomic,strong) DDModalContentView * topView;
+@property (nonatomic,strong) DDModalContentView * contentView;
+@property (nonatomic,strong) DDModalContentView * bottomView;
 @end
 
 @implementation DDModalAlertView
@@ -37,6 +66,16 @@
 - (CGFloat)bottomHeight{
     return 48.0f;
 }
+- (BOOL)topIsEffectView{
+    return YES;
+}
+- (BOOL)contentIsEffectView{
+    return YES;
+}
+- (BOOL)bottomIsEffectView{
+    return YES;
+}
+
 #pragma mark - Setup
 - (void)setupData{
     [super setupData];
@@ -46,7 +85,6 @@
     [self.popView addSubview:self.topView];
     [self.popView addSubview:self.contentView];
     [self.popView addSubview:self.bottomView];
-    
 }
 - (void)setupLayout{
     [super setupLayout];
@@ -66,28 +104,25 @@
 }
 
 #pragma mark - Setting/Getting
-- (UIView *)topView{
+- (DDModalContentView *)topView{
     if(!_topView){
-        UIView * v = [[UIView alloc] init];
-        v.backgroundColor = UIColor.whiteColor;
+        DDModalContentView * v = [[DDModalContentView alloc] init];
         _topView = v;
     }
     return _topView;
 }
 
-- (UIView *)contentView{
+- (DDModalContentView *)contentView{
     if(!_contentView){
-        UIView * v = [[UIView alloc] init];
-        v.backgroundColor = UIColor.whiteColor;
+        DDModalContentView * v = [[DDModalContentView alloc] init];
         _contentView = v;
     }
     return _contentView;
 }
 
-- (UIView *)bottomView{
+- (DDModalContentView *)bottomView{
     if(!_bottomView){
-        UIView * v = [[UIView alloc] init];
-        v.backgroundColor = UIColor.whiteColor;
+        DDModalContentView * v = [[DDModalContentView alloc] init];
         _bottomView = v;
     }
     return _bottomView;

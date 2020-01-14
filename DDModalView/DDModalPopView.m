@@ -72,11 +72,31 @@
     return -self.popMarginBottom;
 }
 
+- (CGFloat)targetHideBottomConstant{
+    if(self.hidePopAnimation == DDModalPopAnimationTop){
+        return -DDModalSelfHeight;
+    }
+    if(self.hidePopAnimation == DDModalPopAnimationBottom){
+        return self.popHeight;
+    }
+    return -self.popMarginBottom;
+}
+
 - (CGFloat)targetInitLeftConstant{
     if(self.showPopAnimation == DDModalPopAnimationLeft){
         return -self.popWidth;
     }
     if(self.showPopAnimation == DDModalPopAnimationRight){
+        return DDModalSelfWidth;
+    }
+    return self.popMarginLeft;
+}
+
+- (CGFloat)targetHideLeftConstant{
+    if(self.hidePopAnimation == DDModalPopAnimationLeft){
+        return -self.popWidth;
+    }
+    if(self.hidePopAnimation == DDModalPopAnimationRight){
         return DDModalSelfWidth;
     }
     return self.popMarginLeft;
@@ -116,14 +136,14 @@
         case DDModalPopAnimationTop:
         case DDModalPopAnimationBottom:{
             [self.popView mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.bottom.equalTo(self).offset(self.targetInitBottomConstant);
+                make.bottom.equalTo(self).offset(self.targetHideBottomConstant);
             }];
         }
             break;
         case DDModalPopAnimationRight:
         case DDModalPopAnimationLeft:{
             [self.popView mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.left.equalTo(self).offset(self.targetInitLeftConstant);
+                make.left.equalTo(self).offset(self.targetHideLeftConstant);
             }];
         }
             break;

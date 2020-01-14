@@ -14,16 +14,18 @@
 		533B651F2368980A0008266A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 533B651E2368980A0008266A /* Assets.xcassets */; };
 		533B65222368980A0008266A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 533B65202368980A0008266A /* LaunchScreen.storyboard */; };
 		533B65252368980A0008266A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 533B65242368980A0008266A /* main.m */; };
-		533B653E236898280008266A /* DDSimpleAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 533B6532236898280008266A /* DDSimpleAlertView.m */; };
 		533B653F236898280008266A /* NSString+DDModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 533B6533236898280008266A /* NSString+DDModal.m */; };
 		533B6540236898280008266A /* DDModalPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 533B6535236898280008266A /* DDModalPopView.m */; };
-		533B6541236898280008266A /* DDSimpleActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 533B6536236898280008266A /* DDSimpleActionView.m */; };
 		533B6542236898280008266A /* UIView+DDModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 533B6537236898280008266A /* UIView+DDModal.m */; };
 		533B6543236898280008266A /* DDModalAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 533B6538236898280008266A /* DDModalAlertView.m */; };
 		533B6544236898280008266A /* UIButton+DDModalHighlightColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 533B6539236898280008266A /* UIButton+DDModalHighlightColor.m */; };
 		533B6545236898280008266A /* DDFlatActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 533B653B236898280008266A /* DDFlatActionView.m */; };
 		533B6546236898280008266A /* DDModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 533B653C236898280008266A /* DDModalView.m */; };
-		533B65492368A31D0008266A /* TestLeftMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 533B65482368A31D0008266A /* TestLeftMenuView.m */; };
+		534C0AAD23CC59A7002B3E01 /* DDAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 534C0AAC23CC59A7002B3E01 /* DDAlertView.m */; };
+		534C0AB023CC6B3D002B3E01 /* DDActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 534C0AAF23CC6B3D002B3E01 /* DDActionView.m */; };
+		534C0AB323CD56C0002B3E01 /* DDModalConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 534C0AB223CD56C0002B3E01 /* DDModalConfig.m */; };
+		534C0AB623CD9463002B3E01 /* DDWXFlatActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 534C0AB523CD9463002B3E01 /* DDWXFlatActionView.m */; };
+		534C0AB923CDA248002B3E01 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 534C0AB823CDA248002B3E01 /* CustomView.m */; };
 		53A828232369DF2A002BDCED /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A828222369DF2A002BDCED /* ViewController2.m */; };
 /* End PBXBuildFile section */
 
@@ -39,26 +41,30 @@
 		533B65212368980A0008266A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		533B65232368980A0008266A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		533B65242368980A0008266A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		533B652C236898280008266A /* DDSimpleActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDSimpleActionView.h; sourceTree = "<group>"; };
 		533B652D236898280008266A /* DDModalPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDModalPopView.h; sourceTree = "<group>"; };
 		533B652E236898280008266A /* DDModalAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDModalAlertView.h; sourceTree = "<group>"; };
 		533B652F236898280008266A /* UIButton+DDModalHighlightColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+DDModalHighlightColor.h"; sourceTree = "<group>"; };
 		533B6530236898280008266A /* UIView+DDModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DDModal.h"; sourceTree = "<group>"; };
 		533B6531236898280008266A /* DDFlatActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFlatActionView.h; sourceTree = "<group>"; };
-		533B6532236898280008266A /* DDSimpleAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDSimpleAlertView.m; sourceTree = "<group>"; };
 		533B6533236898280008266A /* NSString+DDModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DDModal.m"; sourceTree = "<group>"; };
 		533B6534236898280008266A /* DDModalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDModalView.h; sourceTree = "<group>"; };
 		533B6535236898280008266A /* DDModalPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDModalPopView.m; sourceTree = "<group>"; };
-		533B6536236898280008266A /* DDSimpleActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDSimpleActionView.m; sourceTree = "<group>"; };
 		533B6537236898280008266A /* UIView+DDModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DDModal.m"; sourceTree = "<group>"; };
 		533B6538236898280008266A /* DDModalAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDModalAlertView.m; sourceTree = "<group>"; };
 		533B6539236898280008266A /* UIButton+DDModalHighlightColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+DDModalHighlightColor.m"; sourceTree = "<group>"; };
-		533B653A236898280008266A /* DDSimpleAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDSimpleAlertView.h; sourceTree = "<group>"; };
 		533B653B236898280008266A /* DDFlatActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFlatActionView.m; sourceTree = "<group>"; };
 		533B653C236898280008266A /* DDModalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDModalView.m; sourceTree = "<group>"; };
 		533B653D236898280008266A /* NSString+DDModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DDModal.h"; sourceTree = "<group>"; };
-		533B65472368A31D0008266A /* TestLeftMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestLeftMenuView.h; sourceTree = "<group>"; };
-		533B65482368A31D0008266A /* TestLeftMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestLeftMenuView.m; sourceTree = "<group>"; };
+		534C0AAB23CC59A7002B3E01 /* DDAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDAlertView.h; sourceTree = "<group>"; };
+		534C0AAC23CC59A7002B3E01 /* DDAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDAlertView.m; sourceTree = "<group>"; };
+		534C0AAE23CC6B3D002B3E01 /* DDActionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDActionView.h; sourceTree = "<group>"; };
+		534C0AAF23CC6B3D002B3E01 /* DDActionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDActionView.m; sourceTree = "<group>"; };
+		534C0AB123CD56C0002B3E01 /* DDModalConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDModalConfig.h; sourceTree = "<group>"; };
+		534C0AB223CD56C0002B3E01 /* DDModalConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDModalConfig.m; sourceTree = "<group>"; };
+		534C0AB423CD9463002B3E01 /* DDWXFlatActionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDWXFlatActionView.h; sourceTree = "<group>"; };
+		534C0AB523CD9463002B3E01 /* DDWXFlatActionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDWXFlatActionView.m; sourceTree = "<group>"; };
+		534C0AB723CDA248002B3E01 /* CustomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
+		534C0AB823CDA248002B3E01 /* CustomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
 		53A828212369DF2A002BDCED /* ViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
 		53A828222369DF2A002BDCED /* ViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
 		6D4F9F17B8440FA8332DB391 /* libPods-DDModalViewDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DDModalViewDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +109,8 @@
 				533B6516236898090008266A /* AppDelegate.m */,
 				533B6518236898090008266A /* ViewController.h */,
 				533B6519236898090008266A /* ViewController.m */,
+				534C0AB723CDA248002B3E01 /* CustomView.h */,
+				534C0AB823CDA248002B3E01 /* CustomView.m */,
 				53A828212369DF2A002BDCED /* ViewController2.h */,
 				53A828222369DF2A002BDCED /* ViewController2.m */,
 				533B651B236898090008266A /* Main.storyboard */,
@@ -110,8 +118,6 @@
 				533B65202368980A0008266A /* LaunchScreen.storyboard */,
 				533B65232368980A0008266A /* Info.plist */,
 				533B65242368980A0008266A /* main.m */,
-				533B65472368A31D0008266A /* TestLeftMenuView.h */,
-				533B65482368A31D0008266A /* TestLeftMenuView.m */,
 			);
 			path = DDModalViewDemo;
 			sourceTree = "<group>";
@@ -119,18 +125,22 @@
 		533B652B236898280008266A /* DDModalView */ = {
 			isa = PBXGroup;
 			children = (
-				533B6531236898280008266A /* DDFlatActionView.h */,
-				533B653B236898280008266A /* DDFlatActionView.m */,
+				534C0AB123CD56C0002B3E01 /* DDModalConfig.h */,
+				534C0AB223CD56C0002B3E01 /* DDModalConfig.m */,
 				533B652E236898280008266A /* DDModalAlertView.h */,
 				533B6538236898280008266A /* DDModalAlertView.m */,
 				533B652D236898280008266A /* DDModalPopView.h */,
 				533B6535236898280008266A /* DDModalPopView.m */,
 				533B6534236898280008266A /* DDModalView.h */,
 				533B653C236898280008266A /* DDModalView.m */,
-				533B652C236898280008266A /* DDSimpleActionView.h */,
-				533B6536236898280008266A /* DDSimpleActionView.m */,
-				533B653A236898280008266A /* DDSimpleAlertView.h */,
-				533B6532236898280008266A /* DDSimpleAlertView.m */,
+				534C0AAB23CC59A7002B3E01 /* DDAlertView.h */,
+				534C0AAC23CC59A7002B3E01 /* DDAlertView.m */,
+				534C0AAE23CC6B3D002B3E01 /* DDActionView.h */,
+				534C0AAF23CC6B3D002B3E01 /* DDActionView.m */,
+				533B6531236898280008266A /* DDFlatActionView.h */,
+				533B653B236898280008266A /* DDFlatActionView.m */,
+				534C0AB423CD9463002B3E01 /* DDWXFlatActionView.h */,
+				534C0AB523CD9463002B3E01 /* DDWXFlatActionView.m */,
 				533B653D236898280008266A /* NSString+DDModal.h */,
 				533B6533236898280008266A /* NSString+DDModal.m */,
 				533B652F236898280008266A /* UIButton+DDModalHighlightColor.h */,
@@ -257,17 +267,19 @@
 				533B651A236898090008266A /* ViewController.m in Sources */,
 				533B65252368980A0008266A /* main.m in Sources */,
 				533B6517236898090008266A /* AppDelegate.m in Sources */,
-				533B6541236898280008266A /* DDSimpleActionView.m in Sources */,
-				533B65492368A31D0008266A /* TestLeftMenuView.m in Sources */,
+				534C0AAD23CC59A7002B3E01 /* DDAlertView.m in Sources */,
 				533B6543236898280008266A /* DDModalAlertView.m in Sources */,
+				534C0AB623CD9463002B3E01 /* DDWXFlatActionView.m in Sources */,
 				533B6542236898280008266A /* UIView+DDModal.m in Sources */,
 				53A828232369DF2A002BDCED /* ViewController2.m in Sources */,
 				533B6544236898280008266A /* UIButton+DDModalHighlightColor.m in Sources */,
+				534C0AB023CC6B3D002B3E01 /* DDActionView.m in Sources */,
 				533B653F236898280008266A /* NSString+DDModal.m in Sources */,
 				533B6546236898280008266A /* DDModalView.m in Sources */,
 				533B6540236898280008266A /* DDModalPopView.m in Sources */,
+				534C0AB323CD56C0002B3E01 /* DDModalConfig.m in Sources */,
 				533B6545236898280008266A /* DDFlatActionView.m in Sources */,
-				533B653E236898280008266A /* DDSimpleAlertView.m in Sources */,
+				534C0AB923CDA248002B3E01 /* CustomView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

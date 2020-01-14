@@ -1,18 +1,19 @@
 //
-//  DDFlatActionView.m
-//  DDScrollPageViewDemo
+//  DDWXFlatActionView.m
+//  DDModalViewDemo
 //
-//  Created by abiaoyo on 2019/10/27.
-//  Copyright © 2019 abiaoyo. All rights reserved.
+//  Created by abiaoyo on 2020/1/14.
+//  Copyright © 2020 abiaoyo. All rights reserved.
 //
 
-#import "DDFlatActionView.h"
+#import "DDWXFlatActionView.h"
 #import "NSString+DDModal.h"
 #import "UIButton+DDModalHighlightColor.h"
 #import "DDModalConfig.h"
-#define DDFlatActionRowHeight 56.0f
+#define DDWXFlatActionRowHeight 56.0f
+#define DDWXFlatActionFooterHeight 5.0f
 
-@interface DDFlatActionItemCell : UICollectionViewCell
+@interface DDWXFlatActionItemCell : UICollectionViewCell
 
 @property (nonatomic,strong) UILabel * itemLabel;
 @property (nonatomic,strong) UIView * topLineView;
@@ -22,7 +23,7 @@
 
 @end
 
-@implementation DDFlatActionItemCell
+@implementation DDWXFlatActionItemCell
 
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
@@ -91,103 +92,83 @@
 @end
 
 
-
-
-
-
-
-@interface DDFlatActionView()<UICollectionViewDelegate,UICollectionViewDataSource>
-
+@interface DDWXFlatActionView()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic,strong) UICollectionView * collectionView;
-
 @property (nonatomic,strong) UILabel * titleLabel;
 @property (nonatomic,strong) UILabel * messageLabel;
-
 @property (nonatomic,copy) NSAttributedString * alertTitleAttr;
 @property (nonatomic,copy) NSAttributedString * alertMessageAttr;
-
 @property (nonatomic,assign) CGFloat alertTitleHeight;
 @property (nonatomic,assign) CGFloat alertMessageHeight;
-
-@property (nonatomic,copy) NSArray * items;
-
+@property (nonatomic,copy) NSString * cancelTitle;
+@property (nonatomic,copy) NSArray * otherItems;
 @property (nonatomic,copy) void (^onItemBlock)(NSInteger itemIndex);
-
 @property (nonatomic,assign) BOOL hasCorner;
-
-
+@property (nonatomic,strong) UIView * bottomBackgroundView;
 @end
 
-@implementation DDFlatActionView
+@implementation DDWXFlatActionView
 
-+ (DDFlatActionView *)showActionInView:(UIView *)view
-                                 title:(NSString *)title
-                               message:(NSString *)message
-                                 items:(NSArray<NSString *> *)items
-                           onItemBlock:(void (^)(NSInteger itemIndex))onItemBlock{
-    DDFlatActionView * actionView = [self createFlatActionInView:view
-                                                       hasCorner:YES
-                                                           title:title
-                                                         message:message
-                                                           items:items
-                                                     onItemBlock:onItemBlock];
+
++ (DDWXFlatActionView *)showActionInView:(UIView *)view
+                                   title:(NSString *)title
+                                 message:(NSString *)message
+                                  cancel:(NSString *)cancel
+                           onCancelBlock:(void (^)(void))onCancelBlock
+                              otherItems:(NSArray<NSString *> *)otherItems
+                             onItemBlock:(void (^)(NSInteger itemIndex))onItemBlock
+{
+    DDWXFlatActionView * actionView = [self createFlatActionInView:view hasCorner:YES title:title message:message cancel:cancel onCancelBlock:onCancelBlock otherItems:otherItems onItemBlock:onItemBlock];
     [actionView show:nil];
     return actionView;
 }
 
-+ (DDFlatActionView *)showFlatActionInView:(UIView *)view
-                                     title:(NSString *)title
-                                   message:(NSString *)message
-                                     items:(NSArray<NSString *> *)items
-                               onItemBlock:(void (^)(NSInteger itemIndex))onItemBlock{
-    DDFlatActionView * flatView = [self createFlatActionInView:view
-                                                     hasCorner:NO
-                                                         title:title
-                                                       message:message
-                                                         items:items
-                                                   onItemBlock:onItemBlock];
-    [flatView show:nil];
-    return flatView;
++ (DDWXFlatActionView *)actionInView:(UIView *)view
+                                   title:(NSString *)title
+                                 message:(NSString *)message
+                                  cancel:(NSString *)cancel
+                           onCancelBlock:(void (^)(void))onCancelBlock
+                              otherItems:(NSArray<NSString *> *)otherItems
+                             onItemBlock:(void (^)(NSInteger itemIndex))onItemBlock
+{
+    return [self createFlatActionInView:view hasCorner:YES title:title message:message cancel:cancel onCancelBlock:onCancelBlock otherItems:otherItems onItemBlock:onItemBlock];
 }
 
-+ (DDFlatActionView *)actionInView:(UIView *)view
-                             title:(NSString *)title
-                           message:(NSString *)message
-                             items:(NSArray<NSString *> *)items
-                       onItemBlock:(void (^)(NSInteger itemIndex))onItemBlock{
-    return [self createFlatActionInView:view
-                              hasCorner:YES
-                                  title:title
-                                message:message
-                                  items:items
-                            onItemBlock:onItemBlock];
-}
-
-+ (DDFlatActionView *)flatActionInView:(UIView *)view
-                                 title:(NSString *)title
-                               message:(NSString *)message
-                                 items:(NSArray<NSString *> *)items
-                           onItemBlock:(void (^)(NSInteger itemIndex))onItemBlock{
-    return [self createFlatActionInView:view
-                              hasCorner:NO
-                                  title:title
-                                message:message
-                                  items:items
-                            onItemBlock:onItemBlock];
-}
-
-
-
-
-+ (DDFlatActionView *)createFlatActionInView:(UIView *)view
-                                   hasCorner:(BOOL)hasCorner
++ (DDWXFlatActionView *)showFlatActionInView:(UIView *)view
                                        title:(NSString *)title
                                      message:(NSString *)message
-                                       items:(NSArray<NSString *> *)items
-                                 onItemBlock:(void (^)(NSInteger itemIndex))onItemBlock{
+                                      cancel:(NSString *)cancel
+                               onCancelBlock:(void (^)(void))onCancelBlock
+                                  otherItems:(NSArray<NSString *> *)otherItems
+                                 onItemBlock:(void (^)(NSInteger itemIndex))onItemBlock
+{
+    DDWXFlatActionView * actionView = [self flatActionInView:view title:title message:message cancel:cancel onCancelBlock:onCancelBlock otherItems:otherItems onItemBlock:onItemBlock];
+    [actionView show:nil];
+    return actionView;
+}
 
++ (DDWXFlatActionView *)flatActionInView:(UIView *)view
+                                   title:(NSString *)title
+                                 message:(NSString *)message
+                                  cancel:(NSString *)cancel
+                           onCancelBlock:(void (^)(void))onCancelBlock
+                              otherItems:(NSArray<NSString *> *)otherItems
+                             onItemBlock:(void (^)(NSInteger itemIndex))onItemBlock
+{
+    return [self createFlatActionInView:view hasCorner:NO title:title message:message cancel:cancel onCancelBlock:onCancelBlock otherItems:otherItems onItemBlock:onItemBlock];
+}
 
-    DDFlatActionView * modalView = [[DDFlatActionView alloc] initWithFrame:view.bounds];
++ (DDWXFlatActionView *)createFlatActionInView:(UIView *)view
+                                     hasCorner:(BOOL)hasCorner
+                                         title:(NSString *)title
+                                       message:(NSString *)message
+                                        cancel:(NSString *)cancel
+                                 onCancelBlock:(void (^)(void))onCancelBlock
+                                    otherItems:(NSArray<NSString *> *)otherItems
+                                   onItemBlock:(void (^)(NSInteger itemIndex))onItemBlock
+{
+    
+    DDWXFlatActionView * modalView = [[DDWXFlatActionView alloc] initWithFrame:view.bounds];
     [view addSubview:modalView];
     
     [modalView mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -200,7 +181,8 @@
         message = title;
         title = nil;
     }
-    modalView.items = items;
+    modalView.cancelTitle = cancel;
+    modalView.otherItems = otherItems;
     modalView.onItemBlock = onItemBlock;
     
     CGFloat targetMaxWidth = (DDModalViewWidth(view)-modalView.popMarginLeft-modalView.popMarginRight-30);
@@ -283,8 +265,8 @@
     return DDModal_SAFE_BOTTOM_HEIGHT;
 }
 - (CGFloat)contentHeight{
-    CGFloat totalContentHeight = self.items.count*DDFlatActionRowHeight;
-    CGFloat maxHeight = DDModalViewHeight(self)-DDFlatActionRowHeight;
+    CGFloat totalContentHeight = (self.otherItems.count+1)*DDWXFlatActionRowHeight+DDWXFlatActionFooterHeight;
+    CGFloat maxHeight = DDModalViewHeight(self)-DDWXFlatActionRowHeight;
     BOOL scrollEnabled = NO;
     if(totalContentHeight+self.topHeight+self.bottomHeight > maxHeight){
         totalContentHeight = maxHeight-(self.topHeight+self.bottomHeight);
@@ -311,9 +293,6 @@
     [self.topView addSubview:self.titleLabel];
     [self.topView addSubview:self.messageLabel];
     [self.contentView addSubview:self.collectionView];
-    
-    [self.collectionView registerClass:DDFlatActionItemCell.class forCellWithReuseIdentifier:@"DDFlatActionItemCell"];
-    
     [self.bottomView modalSimpleBorder:DDModalBorderTypeTop width:0.5 color:[DDModalConfig sharedConfig].separatorColor];
 }
 
@@ -336,6 +315,7 @@
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.top.equalTo(self.contentView);
     }];
+    
 }
 
 - (void)clickCancelButton:(id)sender{
@@ -344,22 +324,48 @@
 
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 1;
+    return 2;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return self.items.count;
+    if(section == 0){
+        return self.otherItems.count;
+    }else{
+        return 1;
+    }
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    DDFlatActionItemCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"DDFlatActionItemCell" forIndexPath:indexPath];
-    [cell configWithTitle:self.items[indexPath.row] indexPath:indexPath];
+    DDWXFlatActionItemCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"DDWXFlatActionItemCell" forIndexPath:indexPath];
+    if(indexPath.section == 0){
+        [cell configWithTitle:self.otherItems[indexPath.row] indexPath:indexPath];
+    }else{
+        [cell configWithTitle:self.cancelTitle indexPath:indexPath];
+    }
     return cell;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return CGSizeMake(DDModalSelfWidth-[self popMarginLeft]-[self popMarginRight], DDFlatActionRowHeight);
+    return CGSizeMake(DDModalSelfWidth-[self popMarginLeft]-[self popMarginRight], DDWXFlatActionRowHeight);
 }
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section
+{
+    if(section == 0){
+        return CGSizeMake(DDModalSelfWidth, DDWXFlatActionFooterHeight);
+    }
+    return CGSizeZero;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.section == 0 && [kind isEqualToString:UICollectionElementKindSectionFooter]){
+        UICollectionReusableView * footer = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"UICollectionReusableView" forIndexPath:indexPath];
+        footer.backgroundColor = DDModalConfig.sharedConfig.sectionFooterBackgroundColor;
+        return footer;
+    }
+    return nil;
+}
+
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
@@ -380,12 +386,14 @@
         v.delegate = self;
         v.dataSource = self;
         v.backgroundColor = UIColor.clearColor;
+        [v registerClass:DDWXFlatActionItemCell.class forCellWithReuseIdentifier:@"DDWXFlatActionItemCell"];
+        [v registerClass:UICollectionReusableView.class forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"UICollectionReusableView"];
         _collectionView = v;
     }
     return _collectionView;
 }
-    
-    
+
+
 - (UILabel *)titleLabel{
     if(!_titleLabel){
         UILabel * v = [[UILabel alloc] init];

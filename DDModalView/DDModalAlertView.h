@@ -10,11 +10,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface DDModalContentView : UIView
+
+@property (nonatomic,strong,readonly) UIVisualEffectView * effectView;
+
+@end
+
+
+
 @interface DDModalAlertView : DDModalPopView
 
-@property (nonatomic,strong,readonly) UIView * topView;
-@property (nonatomic,strong,readonly) UIView * contentView;
-@property (nonatomic,strong,readonly) UIView * bottomView;
+@property (nonatomic,strong,readonly) DDModalContentView * topView;
+@property (nonatomic,strong,readonly) DDModalContentView * contentView;
+@property (nonatomic,strong,readonly) DDModalContentView * bottomView;
 
 - (CGFloat)topHeight;
 - (CGFloat)contentHeight;

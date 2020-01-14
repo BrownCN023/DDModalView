@@ -19,31 +19,69 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJ1-BX-N76">
-                                <rect key="frame" x="20" y="164" width="91" height="60"/>
+                                <rect key="frame" x="20" y="164" width="192" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.54674304659999995" blue="0.39713179529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Alert"/>
                                 <connections>
                                     <action selector="clickAlertButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JZe-I5-lDH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Upq-My-TZI">
+                                <rect key="frame" x="150" y="573" width="192" height="60"/>
+                                <color key="backgroundColor" red="1" green="0.54674304659999995" blue="0.39713179529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="192" id="9dI-6J-0WY"/>
+                                    <constraint firstAttribute="height" constant="60" id="gMM-3d-U5H"/>
+                                </constraints>
+                                <state key="normal" title="WXFlatAction"/>
+                                <connections>
+                                    <action selector="clickWXAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5rj-JB-us0"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17J-oT-g9i">
-                                <rect key="frame" x="20" y="242" width="91" height="60"/>
+                                <rect key="frame" x="20" y="242" width="214" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.61960784310000006" green="0.85098039219999999" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Action"/>
                                 <connections>
                                     <action selector="clickActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GZE-Pe-0xK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNg-gE-m9F">
-                                <rect key="frame" x="20" y="324" width="91" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNg-gE-m9F">
+                                <rect key="frame" x="53" y="674" width="214" height="100"/>
+                                <color key="backgroundColor" red="1" green="0.54674304659999995" blue="0.39713179529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="214" id="QZC-jj-QtE"/>
+                                    <constraint firstAttribute="height" constant="100" id="Ycd-uI-AA8"/>
+                                </constraints>
                                 <state key="normal" title="FlatAction"/>
                                 <connections>
                                     <action selector="clickFlatActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GoG-Hc-o35"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3GO-Ck-nHc">
+                                <rect key="frame" x="150" y="474" width="192" height="60"/>
+                                <color key="backgroundColor" red="1" green="0.54674304659999995" blue="0.39713179529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="192" id="6oM-TP-QY7"/>
+                                    <constraint firstAttribute="height" constant="60" id="Oah-Wt-6tO"/>
+                                </constraints>
+                                <state key="normal" title="CustomView"/>
+                                <connections>
+                                    <action selector="clickCustom:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9dy-GL-Epa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nNg-gE-m9F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="53" id="4hv-hV-BLO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nNg-gE-m9F" secondAttribute="bottom" id="5gV-Fx-1WG"/>
+                            <constraint firstItem="Upq-My-TZI" firstAttribute="top" secondItem="3GO-Ck-nHc" secondAttribute="bottom" constant="39" id="MWl-1K-aDN"/>
+                            <constraint firstItem="nNg-gE-m9F" firstAttribute="top" secondItem="Upq-My-TZI" secondAttribute="bottom" constant="41" id="SZ5-dU-zDp"/>
+                            <constraint firstItem="Upq-My-TZI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="UxR-3V-Lba"/>
+                            <constraint firstItem="3GO-Ck-nHc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="z8K-ES-0a1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="55I-jl-vEm"/>

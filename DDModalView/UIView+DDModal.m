@@ -64,7 +64,12 @@
     }else{
         lineView = [[UIView alloc] init];
         lineView.backgroundColor = color;
-        [self addSubview:lineView];
+        if([self isKindOfClass:UIVisualEffectView.class]){
+            UIVisualEffectView * selfview = (UIVisualEffectView *)self;
+            [selfview.contentView addSubview:lineView];
+        }else{
+            [self addSubview:lineView];
+        }
         
         switch (type) {
             case DDModalBorderTypeTop:{
