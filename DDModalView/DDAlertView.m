@@ -41,7 +41,7 @@
     self.backgroundView = [[UIView alloc] initWithFrame:self.bounds];
     self.backgroundView.backgroundColor = [DDModalConfig sharedConfig].contentBackgroundColor;
     
-    UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    UIBlurEffect *effect = [UIBlurEffect effectWithStyle:DDModalConfig.sharedConfig.effectStyle];
     self.effectView = [[UIVisualEffectView alloc] initWithEffect:effect];
     self.effectView.hidden = YES;
     [self.contentView addSubview:self.effectView];

@@ -47,6 +47,7 @@
         self.okColor = DDModal_COLOR_Hex(0x494949);
         self.okBackgroundColor = DDModal_COLOR_HexA(0xFFFFFF,0.75);
         
+        self.effectStyle = UIBlurEffectStyleLight;
     }
     return self;
 }

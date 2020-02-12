@@ -28,7 +28,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Upq-My-TZI">
-                                <rect key="frame" x="150" y="573" width="192" height="60"/>
+                                <rect key="frame" x="150" y="593" width="192" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.54674304659999995" blue="0.39713179529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="192" id="9dI-6J-0WY"/>
@@ -49,7 +49,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNg-gE-m9F">
-                                <rect key="frame" x="53" y="674" width="214" height="100"/>
+                                <rect key="frame" x="53" y="694" width="214" height="100"/>
                                 <color key="backgroundColor" red="1" green="0.54674304659999995" blue="0.39713179529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="214" id="QZC-jj-QtE"/>
@@ -61,7 +61,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3GO-Ck-nHc">
-                                <rect key="frame" x="150" y="474" width="192" height="60"/>
+                                <rect key="frame" x="150" y="494" width="192" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.54674304659999995" blue="0.39713179529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="192" id="6oM-TP-QY7"/>
@@ -76,7 +76,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="nNg-gE-m9F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="53" id="4hv-hV-BLO"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nNg-gE-m9F" secondAttribute="bottom" id="5gV-Fx-1WG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nNg-gE-m9F" secondAttribute="bottom" constant="-20" id="5gV-Fx-1WG"/>
                             <constraint firstItem="Upq-My-TZI" firstAttribute="top" secondItem="3GO-Ck-nHc" secondAttribute="bottom" constant="39" id="MWl-1K-aDN"/>
                             <constraint firstItem="nNg-gE-m9F" firstAttribute="top" secondItem="Upq-My-TZI" secondAttribute="bottom" constant="41" id="SZ5-dU-zDp"/>
                             <constraint firstItem="Upq-My-TZI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="UxR-3V-Lba"/>

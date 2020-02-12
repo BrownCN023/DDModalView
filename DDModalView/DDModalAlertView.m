@@ -7,6 +7,7 @@
 //
 
 #import "DDModalAlertView.h"
+#import "DDModalConfig.h"
 
 @interface DDModalContentView()
 
@@ -21,7 +22,8 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-        UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+        
+        UIBlurEffect *effect = [UIBlurEffect effectWithStyle:DDModalConfig.sharedConfig.effectStyle];
         self.effectView = [[UIVisualEffectView alloc] initWithEffect:effect];
         [self addSubview:self.effectView];
         [self.effectView mas_makeConstraints:^(MASConstraintMaker *make) {

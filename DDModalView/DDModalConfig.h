@@ -35,6 +35,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong) UIColor * okColor;
 @property (nonatomic,strong) UIColor * okBackgroundColor;
 
+@property (nonatomic,assign) UIBlurEffectStyle effectStyle;  //UIBlurEffectStyleLight
+
 + (DDModalConfig *)sharedConfig;
 
 @end

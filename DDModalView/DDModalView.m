@@ -19,7 +19,9 @@
 @implementation DDModalView
 
 - (void)dealloc{
+#ifdef DEBUG    
     NSLog(@"--- dealloc %@ ---",self.class);
+#endif
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 

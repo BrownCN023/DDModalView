@@ -28,8 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    DDModalConfig.sharedConfig.cancelBackgroundColor = DDModal_COLOR_HexA(0x37C6C0,0.75);
-//    DDModalConfig.sharedConfig.okBackgroundColor = DDModal_COLOR_HexA(0xF2753F,0.75);
+    DDModalConfig.sharedConfig.cancelBackgroundColor = DDModal_COLOR_HexA(0x37C6C0,0.75);
+    DDModalConfig.sharedConfig.okBackgroundColor = DDModal_COLOR_HexA(0xF2753F,0.75);
 //    DDModalConfig.sharedConfig.contentBackgroundColor = DDModal_COLOR_HexA(0xFF0000,0.35);
 //    DDModalConfig.sharedConfig.topBackgroundColor = DDModal_COLOR_HexA(0xB8288A,0.35);
 }
@@ -78,7 +78,7 @@
     [modalView show:nil];
 }
 - (IBAction)clickWXAction:(id)sender {
-    [DDWXFlatActionView showActionInView:self.view title:@"Hello" message:@"App需要使用相机功能拍照片，去设置里面打开权限吧" cancel:@"取消" onCancelBlock:nil otherItems:@[@"拍照",@"从相册选择"] onItemBlock:^(NSInteger itemIndex) {
+    [DDWXFlatActionView showActionInView:[UIApplication sharedApplication].keyWindow title:@"Hello" message:@"App需要使用相机功能拍照片，去设置里面打开权限吧" cancel:@"取消" onCancelBlock:nil otherItems:@[@"拍照",@"从相册选择"] onItemBlock:^(NSInteger itemIndex) {
         
         [DDWXFlatActionView showFlatActionInView:self.view title:@"Hello" message:@"App需要使用相机功能拍照片，去设置里面打开权限吧" cancel:@"取消" onCancelBlock:nil otherItems:@[@"拍照",@"从相册选择"] onItemBlock:^(NSInteger itemIndex) {
             

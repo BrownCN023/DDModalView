@@ -19,92 +19,44 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DDModalView/DDModalPopView.m"
-            timestampString = "600680024.165271"
+            filePath = "DDModalViewDemo/ViewController.m"
+            timestampString = "602404930.550231"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "-targetInitLeftConstant"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DDModalView/DDModalPopView.m"
-            timestampString = "600680024.1656801"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "-targetInitLeftConstant"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DDModalView/DDModalPopView.m"
-            timestampString = "600680024.165805"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "-targetInitLeftConstant"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DDModalView/DDModalPopView.m"
-            timestampString = "600680024.165879"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
-            landmarkName = "-subviewHideAnimation"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "-clickFlatActionButton:"
             landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "-[DDModalPopView subviewHideAnimation]"
+                  symbolName = "__40-[ViewController clickFlatActionButton:]_block_invoke"
                   moduleName = "DDModalViewDemo"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abiaoyo/Desktop/myopen/DDModalView/DDModalView/DDModalPopView.m"
-                  timestampString = "600679530.705947"
+                  urlString = "file:///Users/abiaoyo/Desktop/myopen/DDModalView/DDModalViewDemo/ViewController.m"
+                  timestampString = "602404567.3026"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "125"
-                  endingLineNumber = "125"
-                  offsetFromSymbolStart = "292">
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "116">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__38-[DDModalPopView subviewHideAnimation]_block_invoke_2"
+                  symbolName = "__40-[ViewController clickFlatActionButton:]_block_invoke_2"
                   moduleName = "DDModalViewDemo"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abiaoyo/Desktop/myopen/DDModalView/DDModalView/DDModalPopView.m"
-                  timestampString = "600679530.70973"
+                  urlString = "file:///Users/abiaoyo/Desktop/myopen/DDModalView/DDModalViewDemo/ViewController.m"
+                  timestampString = "602404567.304428"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "125"
-                  endingLineNumber = "125"
-                  offsetFromSymbolStart = "16">
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "12">
                </Location>
             </Locations>
          </BreakpointContent>
